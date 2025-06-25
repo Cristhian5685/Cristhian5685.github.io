@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle del Producto</title>
+  <link rel="stylesheet" href="detalle.css">
+</head>
+<body>
+  <div class="detalle-container">
+    <img id="detalle-imagen" src="" alt="">
+    <div class="detalle-info">
+      <h1 id="detalle-nombre"></h1>
+      <p id="detalle-descripcion"></p>
+      <p><strong>Tipo de carne:</strong> <span id="detalle-tipo-carne"></span></p>
+      <h3>Ingredientes:</h3>
+      <ul id="detalle-ingredientes"></ul>
+      <span id="detalle-precio"></span>
+    </div>
+  </div>
+  <script src="detalle.js"></script>
+  <button onclick="history.back()" class="btn-volver">← Volver</button>
+  
+  <section class="recomendaciones">
+    <h2>También te puede interesar</h2>
+    <div class="grid-recomendaciones" id="recomendaciones-container"></div>
+  </section>
+  
+</body>
+</html>
