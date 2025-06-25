@@ -1,173 +1,320 @@
 [
-    {
-      "categoria": "Comida Mexicana",
-      "productos": [
-        {
-            "nombre": "Orden de tacos",
-            "tipoCarne": "Res, Cerdo, Pollo o Mixto",
-            "descripcion": "Disfruta de una deliciosa orden de tacos al estilo mexicano, servidos con tortillas suaves y acompañados de salsas tradicionales.",
-            "ingredientes": ["Tortilla de maíz", "Carne al gusto", "Cilantro", "Cebolla", "Salsas mexicanas"],
-            "precio": 270,
-            "imagen": "images/tacos.jpg"
-          },
-          {
-            "nombre": "Tacos con queso",
-            "tipoCarne": "Res, Cerdo, Pollo o Mixto",
-            "descripcion": "Disfruta de nuestros tradicionales tacos con queso, preparados con tortilla de maíz, rellenos con carne de tu elección y queso fundido.",
-            "ingredientes": ["Tortilla de maíz", "Queso fundido", "Carne (res, cerdo, pollo)", "Cilantro", "Cebolla", "Salsas especiales"],
-            "precio": 290,
-            "imagen": "images/tacos_queso.jpg"
-          },
-          {
-            "nombre": "Quesadillas",
-            "tipoCarne": "Res, Cerdo, Pollo o Mixto",
-            "descripcion": "Quesadillas doradas al comal, rellenas con queso y tu elección de carne. Acompañadas con guarniciones típicas mexicanas.",
-            "ingredientes": ["Tortilla de trigo", "Queso", "Carne al gusto", "Guacamole", "Salsa", "Crema"],
-            "precio": 270,
-            "imagen": "images/quedadillas.jpg"
-          },
-          {
-            "nombre": "Burritos",
-            "tipoCarne": "Res, Cerdo, Pollo o Mixto",
-            "descripcion": "Clásicos burritos rellenos con carne, frijoles y arroz, envueltos en una suave tortilla de harina.",
-            "ingredientes": ["Tortilla de harina", "Frijoles", "Arroz", "Carne al gusto", "Queso", "Salsa"],
-            "precio": 295,
-            "imagen": "images/burritos.jpg"
-          }
-      ]
-    },
-    {
-      "categoria": "Antojitos",
-      "productos": [
-        {
-            "nombre": "Parrillada Salvamex",
-            "tipoCarne": "Mixta",
-            "descripcion": "Una mezcla perfecta de carnes asadas con el auténtico toque Salvamex. Ideal para compartir.",
-            "ingredientes": ["Res", "Cerdo", "Pollo", "Piña", "Cebolla", "Cilantro"],
-            "precio": 340,
-            "imagen": "images/parrillada_salvamex.jpg"
-          },
-          {
-            "nombre": "Nachos Salvamex",
-            "tipoCarne": "Res, Cerdo, Pollo o Mixto",
-            "descripcion": "Totopos crujientes con carne, queso fundido y vegetales frescos. Un antojito irresistible.",
-            "ingredientes": ["Totopos", "Queso fundido", "Carne", "Cebolla", "Piña", "Cilantro"],
-            "precio": 360,
-            "imagen": "images/nachos.jpg"
-          },
-          {
-            "nombre": "Tostones Premium",
-            "tipoCarne": "Res",
-            "descripcion": "Tostones con topping de carne, vegetales y salsas. Perfectos para compartir o como entrada.",
-            "ingredientes": ["Tostones", "Carne", "Queso", "Piña", "Cilantro", "Cebolla"],
-            "precio": 350,
-            "imagen": "images/tostones_premium.jpg"
-          },
-          {
-            "nombre": "Tostones con queso",
-            "tipoCarne": "Sin carne",
-            "descripcion": "Tostones fritos con queso fundido encima, acompañados con vegetales frescos.",
-            "ingredientes": ["Tostones", "Queso", "Piña", "Cilantro", "Cebolla"],
-            "precio": 220,
-            "imagen": "images/tostones.jpg"
-          }
-      ]
-    },
-    {
-      "categoria": "Lo más popular",
-      "productos": [
-        {
-            "nombre": "Especial Salvamex",
-            "tipoCarne": "Res",
-            "descripcion": "Plato completo con variedad de carnes, vegetales y acompañamientos típicos. ¡Un festín!",
-            "ingredientes": ["Res", "Pollo", "Cerdo", "Piña", "Cebolla", "Cilantro", "Guarniciones"],
-            "precio": 480,
-            "imagen": "images/especial_salvamex.jpg"
-          },
-          {
-            "nombre": "Lomito en salsa",
-            "tipoCarne": "Res, Cerdo, Pollo",
-            "descripcion": "Lomito jugoso bañado en salsa de hongos o jalapeños. Perfecto para paladares exigentes.",
-            "ingredientes": ["Lomo de res", "Salsa de hongos o jalapeños", "Cilantro", "Acompañamientos"],
-            "precio": 340,
-            "imagen": "images/hongo_res.jpg"
-          },
-          {
-            "nombre": "Cena Ganadera",
-            "tipoCarne": "Res",
-            "descripcion": "Combinación abundante de carnes al estilo tradicional, acompañadas con vegetales.",
-            "ingredientes": ["Res", "Piña", "Cebolla", "Cilantro"],
-            "precio": 480,
-            "imagen": "images/cena_ganadera.jpg"
-          },
-          {
-            "nombre": "Tipico Salvadoreño",
-            "tipoCarne": "Res",
-            "descripcion": "Plato típico con carnes y acompañamientos tradicionales de El Salvador.",
-            "ingredientes": ["Carne mixta", "Piña", "Cebolla", "Cilantro", "Frijoles", "Plátano"],
-            "precio": 450,
-            "imagen": "images/tip_salvador.jpg"
-          }
-      ]
-    },
-    {
-      "categoria": "Platos Fuertes",
-      "productos": [
-        {
-            "nombre": "Parrillada Suprema",
-            "tipoCarne": "Mixta",
-            "descripcion": "Parrillada completa con selección de carnes y acompañamientos. Ideal para compartir.",
-            "ingredientes": ["Res", "Cerdo", "Pollo", "Chorizo", "Piña", "Cebolla", "Cilantro"],
-            "precio": 720,
-            "imagen": "images/parrillada_suprema.jpg"
-          },
-          {
-            "nombre": "Parrillada Light",
-            "tipoCarne": "Res",
-            "descripcion": "Una versión ligera de nuestra parrillada, perfecta para cuidar tu alimentación.",
-            "ingredientes": ["Res", "Vegetales a la parrilla", "Piña", "Cilantro", "Cebolla"],
-            "precio": 420,
-            "imagen": "images/parrillada_ligth.jpg"
-          },
-          {
-            "nombre": "Filet Mignon",
-            "tipoCarne": "Res",
-            "descripcion": "Corte fino de res cocinado a la perfección, jugoso y tierno. Servido con guarniciones.",
-            "ingredientes": ["Filet Mignon", "Salsa de la casa", "Piña", "Cebolla", "Cilantro"],
-            "precio": 460,
-            "imagen": "images/filet_mignon.jpg"
-          },
-          {
-            "nombre": "Churrasco Salvamex",
-            "tipoCarne": "Res",
-            "descripcion": "Churrasco jugoso con el toque especial de Salvamex, acompañado de guarniciones.",
-            "ingredientes": ["Carne de res", "Piña", "Cebolla", "Cilantro", "Acompañamientos"],
-            "precio": 480,
-            "imagen": "images/churrasco.jpg"
-          }
-      ]
-    },
-    {
-      "categoria": "Comida Rápida",
-      "productos": [
-        {
-      "nombre": "Orden de 6 alitas",
-      "tipoCarne": "Pollo",
-      "descripcion": "Alitas de pollo bañadas en tu salsa favorita: barbacoa, agridulce o buffalo.",
-      "ingredientes": ["Alitas de pollo", "Salsa barbacoa", "Salsa buffalo", "Salsa agridulce"],
-      "precio": 340,
-      "imagen": "images/alitas.jpg"
-    },
-    {
-      "nombre": "Hamburguesa doble con papas",
-      "tipoCarne": "Res o Pollo",
-      "descripcion": "Jugosa hamburguesa doble con queso, vegetales frescos y papas fritas.",
-      "ingredientes": ["Pan artesanal", "Doble carne", "Queso", "Piña", "Cebolla", "Papas fritas"],
-      "precio": 190,
-      "imagen": "images/ham_papas.jpg"
-    }
-
-      ]
-    }
-  ]
-  
+  {
+    "categoria": "Comida Mexicana",
+    "productos": [
+      {
+        "nombre": "Orden de tacos",
+        "tipoCarne": "Res, Cerdo, Pollo o Mixto",
+        "personalizableCarne": true,
+        "permitirMixto": true,
+        "descripcion": "Disfruta de una deliciosa orden de tacos al estilo mexicano, servidos con tortillas suaves y acompañados de salsas tradicionales.",
+        "ingredientes": [
+          "Tortilla de maíz",
+          "Carne al gusto",
+          "Cilantro",
+          "Cebolla",
+          "Salsas mexicanas"
+        ],
+        "precio": 270,
+        "imagen": "images/tacos.jpg"
+      },
+      {
+        "nombre": "Tacos con queso",
+        "tipoCarne": "Res, Cerdo, Pollo o Mixto",
+        "personalizableCarne": true,
+        "permitirMixto": true,
+        "descripcion": "Disfruta de nuestros tradicionales tacos con queso, preparados con tortilla de maíz, rellenos con carne de tu elección y queso fundido.",
+        "ingredientes": [
+          "Tortilla de maíz",
+          "Queso fundido",
+          "Carne (res, cerdo, pollo)",
+          "Cilantro",
+          "Cebolla",
+          "Salsas especiales"
+        ],
+        "precio": 290,
+        "imagen": "images/tacos_queso.jpg"
+      },
+      {
+        "nombre": "Quesadillas",
+        "tipoCarne": "Res, Cerdo, Pollo o Mixto",
+        "permitirMixto": true,
+        "personalizableCarne": true,
+        "descripcion": "Quesadillas doradas al comal, rellenas con queso y tu elección de carne. Acompañadas con guarniciones típicas mexicanas.",
+        "ingredientes": [
+          "Tortilla de trigo",
+          "Queso",
+          "Carne al gusto",
+          "Guacamole",
+          "Salsa",
+          "Crema"
+        ],
+        "precio": 270,
+        "imagen": "images/quedadillas.jpg"
+      },
+      {
+        "nombre": "Burritos",
+        "tipoCarne": "Res, Cerdo, Pollo o Mixto",
+        "personalizableCarne": true,
+        "permitirMixto": true,
+        "descripcion": "Clásicos burritos rellenos con carne, frijoles y arroz, envueltos en una suave tortilla de harina.",
+        "ingredientes": [
+          "Tortilla de harina",
+          "Frijoles",
+          "Arroz",
+          "Carne al gusto",
+          "Queso",
+          "Salsa"
+        ],
+        "precio": 295,
+        "imagen": "images/burritos.jpg"
+      }
+    ]
+  },
+  {
+    "categoria": "Antojitos",
+    "productos": [
+      {
+        "nombre": "Parrillada Salvamex",
+        "tipoCarne": "Mixta",
+        "personalizableCarne": false,
+        "descripcion": "Una mezcla perfecta de carnes asadas con el auténtico toque Salvamex. Ideal para compartir.",
+        "ingredientes": [
+          "Res",
+          "Cerdo",
+          "Pollo",
+          "Piña",
+          "Cebolla",
+          "Cilantro"
+        ],
+        "precio": 340,
+        "imagen": "images/parrillada_salvamex.jpg"
+      },
+      {
+        "nombre": "Nachos Salvamex",
+        "tipoCarne": "Res, Cerdo, Pollo o Mixto",
+        "personalizableCarne": true,
+        "permitirMixto": true,
+        "descripcion": "Totopos crujientes con carne, queso fundido y vegetales frescos. Un antojito irresistible.",
+        "ingredientes": [
+          "Totopos",
+          "Queso fundido",
+          "Carne",
+          "Cebolla",
+          "Piña",
+          "Cilantro"
+        ],
+        "precio": 360,
+        "imagen": "images/nachos.jpg"
+      },
+      {
+        "nombre": "Tostones Premium",
+        "tipoCarne": "Res",
+        "personalizableCarne": false,
+          "permitirMixto": false,
+        "descripcion": "Tostones con topping de carne, vegetales y salsas. Perfectos para compartir o como entrada.",
+        "ingredientes": [
+          "Tostones",
+          "Carne",
+          "Queso",
+          "Piña",
+          "Cilantro",
+          "Cebolla"
+        ],
+        "precio": 350,
+        "imagen": "images/tostones_premium.jpg"
+      },
+      {
+        "nombre": "Tostones con queso",
+        "tipoCarne": "Sin carne",
+        "personalizableCarne": false,
+        "permitirMixto": false,
+        "descripcion": "Tostones fritos con queso fundido encima, acompañados con vegetales frescos.",
+        "ingredientes": [
+          "Tostones",
+          "Queso",
+          "Piña",
+          "Cilantro",
+          "Cebolla"
+        ],
+        "precio": 220,
+        "imagen": "images/tostones.jpg"
+      }
+    ]
+  },
+  {
+    "categoria": "Lo más popular",
+    "productos": [
+      {
+        "nombre": "Especial Salvamex",
+        "tipoCarne": "Res, Cerdo, Pollo",
+        "personalizableCarne": true,
+          "permitirMixto": false,
+        "descripcion": "Plato completo con variedad de carnes, vegetales y acompañamientos típicos. ¡Un festín!",
+        "ingredientes": [
+          "Res",
+          "Pollo",
+          "Cerdo",
+          "Piña",
+          "Cebolla",
+          "Cilantro",
+          "Guarniciones"
+        ],
+        "precio": 480,
+        "imagen": "images/especial_salvamex.jpg"
+      },
+      {
+        "nombre": "Lomito en salsa",
+        "tipoCarne": "Res, Cerdo, Pollo",
+        "personalizableCarne": true,
+        "permitirMixto": false,
+        "descripcion": "Lomito jugoso bañado en salsa de hongos o jalapeños. Perfecto para paladares exigentes.",
+        "ingredientes": [
+          "Lomo de res",
+          "Salsa de hongos o jalapeños",
+          "Cilantro",
+          "Acompañamientos"
+        ],
+        "precio": 340,
+        "imagen": "images/hongo_res.jpg"
+      },
+      {
+        "nombre": "Cena Ganadera",
+        "tipoCarne": "Res, Cerdo, Pollo",
+        "personalizableCarne": true,
+        "permitirMixto": false,
+        "descripcion": "Combinación abundante de carnes al estilo tradicional, acompañadas con vegetales.",
+        "ingredientes": [
+          "Res",
+          "Piña",
+          "Cebolla",
+          "Cilantro"
+        ],
+        "precio": 480,
+        "imagen": "images/cena_ganadera.jpg"
+      },
+      {
+        "nombre": "Tipico Salvadoreño",
+        "tipoCarne": "Res, Cerdo, Pollo",
+        "personalizableCarne": true,
+        "permitirMixto": false,
+        "descripcion": "Plato típico con carnes y acompañamientos tradicionales de El Salvador.",
+        "ingredientes": [
+          "Carne mixta",
+          "Piña",
+          "Cebolla",
+          "Cilantro",
+          "Frijoles",
+          "Plátano"
+        ],
+        "precio": 450,
+        "imagen": "images/tip_salvador.jpg"
+      }
+    ]
+  },
+  {
+    "categoria": "Platos Fuertes",
+    "productos": [
+      {
+        "nombre": "Parrillada Suprema",
+        "tipoCarne": "Mixta",
+        "personalizableCarne": false,
+        "descripcion": "Parrillada completa con selección de carnes y acompañamientos. Ideal para compartir.",
+        "ingredientes": [
+          "Res",
+          "Cerdo",
+          "Pollo",
+          "Chorizo",
+          "Piña",
+          "Cebolla",
+          "Cilantro"
+        ],
+        "precio": 720,
+        "imagen": "images/parrillada_suprema.jpg"
+      },
+      {
+        "nombre": "Parrillada Light",
+        "tipoCarne": "Res",
+        "personalizableCarne": false,
+          "permitirMixto": false,
+        "descripcion": "Una versión ligera de nuestra parrillada, perfecta para cuidar tu alimentación.",
+        "ingredientes": [
+          "Res",
+          "Vegetales a la parrilla",
+          "Piña",
+          "Cilantro",
+          "Cebolla"
+        ],
+        "precio": 420,
+        "imagen": "images/parrillada_ligth.jpg"
+      },
+      {
+        "nombre": "Filet Mignon",
+        "tipoCarne": "Res",
+        "personalizableCarne": false,
+          "permitirMixto": false,
+        "descripcion": "Corte fino de res cocinado a la perfección, jugoso y tierno. Servido con guarniciones.",
+        "ingredientes": [
+          "Filet Mignon",
+          "Salsa de la casa",
+          "Piña",
+          "Cebolla",
+          "Cilantro"
+        ],
+        "precio": 460,
+        "imagen": "images/filet_mignon.jpg"
+      },
+      {
+        "nombre": "Churrasco Salvamex",
+        "tipoCarne": "Res",
+        "personalizableCarne": false,
+         "permitirMixto": false,
+        "descripcion": "Churrasco jugoso con el toque especial de Salvamex, acompañado de guarniciones.",
+        "ingredientes": [
+          "Carne de res",
+          "Piña",
+          "Cebolla",
+          "Cilantro",
+          "Acompañamientos"
+        ],
+        "precio": 480,
+        "imagen": "images/churrasco.jpg"
+      }
+    ]
+  },
+  {
+    "categoria": "Comida Rápida",
+    "productos": [
+      {
+        "nombre": "Orden de 6 alitas",
+        "tipoCarne": "Pollo",
+        "personalizableCarne": false,
+        "descripcion": "Alitas de pollo bañadas en tu salsa favorita: barbacoa, agridulce o buffalo.",
+        "ingredientes": [
+          "Alitas de pollo",
+          "Salsa barbacoa",
+          "Salsa buffalo",
+          "Salsa agridulce"
+        ],
+        "precio": 340,
+        "imagen": "images/alitas.jpg"
+      },
+      {
+        "nombre": "Hamburguesa doble con papas",
+        "tipoCarne": "Res",
+        "personalizableCarne": false,
+        "descripcion": "Jugosa hamburguesa doble con queso, vegetales frescos y papas fritas.",
+        "ingredientes": [
+          "Pan artesanal",
+          "Doble carne",
+          "Queso",
+          "Piña",
+          "Cebolla",
+          "Papas fritas"
+        ],
+        "precio": 190,
+        "imagen": "images/ham_papas.jpg"
+      }
+    ]
+  }
+]
