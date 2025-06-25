@@ -14,6 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("detalle-descripcion").textContent = producto.descripcion || "Descripción no disponible.";
     document.getElementById("detalle-tipo-carne").textContent = producto.tipoCarne || "No especificado.";
     document.getElementById("detalle-precio").textContent = `C$${producto.precio.toFixed(2)}`;
+
+    // Agregar botón al detalle
+const btnAgregar = document.createElement("button");
+btnAgregar.textContent = "Agregar al carrito";
+btnAgregar.className = "btn-agregar-carrito";
+btnAgregar.onclick = () => {
+  // Debes tener la función agregarAlCarrito disponible en el contexto global
+  if (typeof agregarAlCarrito === "function") {
+    agregarAlCarrito(producto);
+  } else {
+    // Si no está, puedes guardar en localStorage y redirigir o mostrar un mensaje
+    alert("Función de carrito no disponible en esta página.");
+  }
+};
   
     const ul = document.getElementById("detalle-ingredientes");
     ul.innerHTML = "";
@@ -48,21 +62,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const contenedor = document.getElementById("recomendaciones-container");
 
-    sugerencias.forEach(producto => {
-      const enlace = document.createElement("a");
-      enlace.href = "detalle.html";
-      enlace.classList.add("producto");
-      enlace.addEventListener("click", () => {
-        localStorage.setItem("productoSeleccionado", JSON.stringify(producto));
-      });
+  sugerencias.forEach(producto => {
+  const enlace = document.createElement("a");
+  enlace.href = "detalle.html";
+  enlace.classList.add("producto");
+  enlace.addEventListener("click", () => {
+    localStorage.setItem("productoSeleccionado", JSON.stringify(producto));
+  });
 
-      enlace.innerHTML = `
-        <img src="${producto.imagen}" alt="${producto.nombre}">
-        <h3>${producto.nombre}</h3>
-        <p>${producto.tipoCarne || ""}</p>
-        <span>C$${producto.precio.toFixed(2)}</span>
-      `;
+  enlace.innerHTML = `
+    <img src="${producto.imagen}" alt="${producto.nombre}">
+    <h3>${producto.nombre}</h3>
+    <p>${producto.tipoCarne || ""}</p>
+    <span>C$${producto.precio.toFixed(2)}</span>
+  `;
 
-      contenedor.appendChild(enlace);
-    });
+  // Botón agregar al carrito
+  const btn = document.createElement("button");
+  btn.textContent = "Agregar al carrito";
+  btn.className = "btn-agregar-carrito";
+  btn.onclick = (e) => {
+    e.preventDefault(); // Para que no navegue al detalle
+
+    // Buscar el producto completo en el JSON por nombre
+    const productoCompleto = categorias
+      .flatMap(cat => cat.productos)
+      .find(p => p.nombre === producto.nombre);
+
+    if (typeof agregarAlCarrito === "function" && productoCompleto) {
+      agregarAlCarrito(productoCompleto);
+    } else {
+      alert("Función de carrito no disponible en esta página.");
+    }
+  };
+  enlace.appendChild(btn);
+
+  contenedor.appendChild(enlace);
+});
   });
