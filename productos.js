@@ -40,8 +40,9 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     subtotalCarrito.textContent = `C$${subtotal.toFixed(2)}`;
     document.getElementById("contador-carrito").textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
 
-    const mensaje = carrito.map(p => `• ${p.nombre} (${p.tipoCarne}) - ${p.cantidad} x C$${p.precio.toFixed(2)}${p.observaciones ? `\n  Nota: ${p.observaciones}` : ''}`).join('%0A');
-    const link = `https://wa.me/50582318300?text=Hola,%20quiero%20hacer%20este%20pedido:%0A${mensaje}%0A%0ASubtotal:%20C$${subtotal.toFixed(2)}`;
+const mensaje = carrito.map(p => 
+  `• ${p.nombre}${p.tipoCarne ? ` (${p.tipoCarne})` : ""} - ${p.cantidad} x C$${p.precio.toFixed(2)}${p.observaciones ? `\n  Nota: ${p.observaciones}` : ''}`
+).join('%0A');    const link = `https://wa.me/50582318300?text=Hola,%20quiero%20hacer%20este%20pedido:%0A${mensaje}%0A%0ASubtotal:%20C$${subtotal.toFixed(2)}`;
     btnWhatsapp.href = link;
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
