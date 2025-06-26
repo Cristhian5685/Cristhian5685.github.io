@@ -1,12 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Detalle del Producto</title>
   <link rel="stylesheet" href="detalle.css">
+  <link rel="stylesheet" href="productos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
+  <!-- Agrega esto justo después de <body> o dentro de <header> -->
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Menú</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="carrito-wrapper">
+      <div id="icono-carrito">🛒 <span id="contador-carrito">0</span></div>
+      <div id="carrito-dropdown" class="carrito-dropdown oculto">
+        <div id="lista-carrito"></div>
+        <div class="subtotal">Subtotal: <span id="subtotal-carrito">C$0.00</span></div>
+        <div class="acciones-carrito">
+          <button id="btn-vaciar-carrito"><i class="fas fa-trash-alt"></i> Vaciar carrito</button>
+          <a id="btn-whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
   <div class="detalle-container">
     <img id="detalle-imagen" src="" alt="">
     <div class="detalle-info">
@@ -18,14 +42,17 @@
       <span id="detalle-precio"></span>
     </div>
   </div>
-  <script src="productos.js"></script>
-  <script src="detalle.js"></script>
-  <button onclick="history.back()" class="btn-volver">← Volver</button>
+ 
   
+
   <section class="recomendaciones">
     <h2>También te puede interesar</h2>
     <div class="grid-recomendaciones" id="recomendaciones-container"></div>
   </section>
+
+   <script src="carrito.js"></script>
+  <script src="detalle.js"></script>
   
 </body>
+
 </html>
