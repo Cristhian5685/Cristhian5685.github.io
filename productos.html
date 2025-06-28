@@ -12,28 +12,31 @@
 </head>
 
 <body>
-  <header>
-    <nav>
+  <header class="header-flex">
+    <nav id="navMenu">
       <a href="index.html">Inicio</a>
       <a href="productos.html">Menú</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-
-    <div class="buscador-wrapper">
-      <input type="text" id="buscador" placeholder="Buscar productos...">
-      <span id="limpiarBuscador">×</span>
-    </div>
-
-    <div class="carrito-wrapper">
-      <div id="icono-carrito">🛒 <span id="contador-carrito">0</span></div>
-
-      <div id="carrito-dropdown" class="carrito-dropdown oculto">
-        <div id="lista-carrito"></div>
-        <div class="subtotal">Subtotal: <span id="subtotal-carrito">C$0.00</span></div>
-        <div class="acciones-carrito">
-          <button id="btn-vaciar-carrito"><i class="fas fa-trash-alt"></i> Vaciar carrito</button>
-          <a id="btn-whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-
+    <div class="header-row">
+      <button class="menu-hamburguesa" id="btnMenu" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="buscador-wrapper">
+        <input type="text" id="buscador" placeholder="Buscar productos...">
+        <span id="limpiarBuscador">×</span>
+      </div>
+      <div class="carrito-wrapper">
+        <div id="icono-carrito">🛒 <span id="contador-carrito">0</span></div>
+        <div id="carrito-dropdown" class="carrito-dropdown oculto">
+          <div id="lista-carrito"></div>
+          <div class="subtotal">Subtotal: <span id="subtotal-carrito">C$0.00</span></div>
+          <div class="acciones-carrito">
+            <button id="btn-vaciar-carrito"><i class="fas fa-trash-alt"></i> Vaciar carrito</button>
+            <a id="btn-whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
         </div>
       </div>
     </div>
