@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- NUEVO: Manipular historial para que el botón atrás lleve a productos.html ---
+  const cat = JSON.parse(localStorage.getItem("categoriaSeleccionada"));
+  if (cat) {
+    localStorage.setItem("mostrarCategoriaAlCargar", JSON.stringify(cat));
+    history.replaceState({}, "", "productos.html");
+  } else {
+    // Si no hay categoría, solo reemplaza el historial sin setear mostrarCategoriaAlCargar
+    history.replaceState({}, "", "productos.html");
+  }
+
   const producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
 
   if (!producto) {
@@ -29,20 +39,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Botón volver a la lista de productos de la categoría
   const btnVolver = document.createElement("button");
-  btnVolver.textContent = "← Volver";
-  btnVolver.className = "btn-agregar-carrito";
-  btnVolver.style.margin = "18px 0 0 0";
+  btnVolver.innerHTML = '<i class="fas fa-arrow-left"></i> Volver';
+  btnVolver.className = "btn-volver";
+  btnVolver.id = "btn-volver";
   btnVolver.onclick = () => {
     const cat = JSON.parse(localStorage.getItem("categoriaSeleccionada"));
     if (cat) {
-      // Guardar la categoría en localStorage y redirigir a productos.html
       localStorage.setItem("mostrarCategoriaAlCargar", JSON.stringify(cat));
       window.location.href = "productos.html";
     } else {
-      window.history.back();
+      window.location.href = "productos.html";
     }
   };
-  document.getElementById("detalle-precio").parentNode.insertBefore(btnVolver, document.getElementById("detalle-precio").parentNode.firstChild);
+  // Insertar el botón antes del contenedor de detalle
+  const detalleContainer = document.querySelector(".detalle-container");
+  detalleContainer.parentNode.insertBefore(btnVolver, detalleContainer);
 
   // Ingredientes
   const ul = document.getElementById("detalle-ingredientes");
@@ -78,40 +89,76 @@ fetch("productos.json")
     const contenedor = document.getElementById("recomendaciones-container");
 
     sugerencias.forEach(producto => {
-      const enlace = document.createElement("a");
-      enlace.href = "detalle.html";
-      enlace.classList.add("producto");
-      enlace.addEventListener("click", () => {
-        localStorage.setItem("productoSeleccionado", JSON.stringify(producto));
+      // Usar la misma estructura que en productos: un solo div.producto
+      const div = document.createElement("div");
+      div.className = "producto";
+      // Imagen
+      const img = document.createElement("img");
+      img.src = producto.imagen;
+      img.alt = producto.nombre;
+      // Título
+      const h3 = document.createElement("h3");
+      h3.textContent = producto.nombre;
+      // Tipo de carne
+      const p = document.createElement("p");
+      p.textContent = producto.tipoCarne || "";
+      // Precio
+      const span = document.createElement("span");
+      span.textContent = `C$${producto.precio.toFixed(2)}`;
+      // Enlace al detalle
+      div.addEventListener("click", (e) => {
+        // Solo si no es el botón
+        if (e.target.tagName !== "BUTTON") {
+          localStorage.setItem("productoSeleccionado", JSON.stringify(producto));
+          window.location.href = "detalle.html";
+        }
       });
-
-      enlace.innerHTML = `
-        <img src="${producto.imagen}" alt="${producto.nombre}">
-        <h3>${producto.nombre}</h3>
-        <p>${producto.tipoCarne || ""}</p>
-        <span>C$${producto.precio.toFixed(2)}</span>
-      `;
-
-      // Botón agregar al carrito en sugerencias
+      // Botón agregar al carrito
       const btn = document.createElement("button");
       btn.textContent = "Agregar al carrito";
-      btn.className = "btn-agregar-carrito";
       btn.onclick = (e) => {
-        e.preventDefault(); // Para que no navegue al detalle
-
-        // Buscar el producto completo en el JSON por nombre
+        e.stopPropagation();
         const productoCompleto = categorias
           .flatMap(cat => cat.productos)
           .find(p => p.nombre === producto.nombre);
-
         if (typeof agregarAlCarrito === "function" && productoCompleto) {
           agregarAlCarrito(productoCompleto);
         } else {
           alert("Función de carrito no disponible en esta página.");
         }
       };
-      enlace.appendChild(btn);
-
-      contenedor.appendChild(enlace);
+      // Ensamblar
+      div.appendChild(img);
+      div.appendChild(h3);
+      div.appendChild(p);
+      div.appendChild(span);
+      div.appendChild(btn);
+      contenedor.appendChild(div);
     });
   });
+
+// Menú hamburguesa funcional para detalle
+const btnMenu = document.getElementById('btnMenu');
+const navMenu = document.getElementById('navMenu');
+if (btnMenu && navMenu) {
+  btnMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle('abierto');
+  });
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900 && navMenu.classList.contains('abierto')) {
+      if (!navMenu.contains(e.target) && !btnMenu.contains(e.target)) {
+        navMenu.classList.remove('abierto');
+      }
+    }
+  });
+}
+
+// Limpiar estado de categoría al hacer clic en "Menú" desde el nav
+const menuLink = document.querySelector('a[href="productos.html"]');
+if (menuLink) {
+  menuLink.addEventListener("click", () => {
+    localStorage.removeItem("mostrarCategoriaAlCargar");
+    localStorage.removeItem("categoriaSeleccionada");
+  });
+}
